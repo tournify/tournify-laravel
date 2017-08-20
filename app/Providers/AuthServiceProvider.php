@@ -27,7 +27,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(GateContract $gate)
     {
         if (Schema::hasTable('permissions')) {
-            // TODO this needs to be reviewed, does not work with migrations
             parent::registerPolicies($gate);
             // Dynamically register permissions with Laravel's Gate.
             foreach ($this->getPermissions() as $permission) {
