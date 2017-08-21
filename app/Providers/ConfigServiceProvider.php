@@ -7,8 +7,6 @@
  */
 
 use Illuminate\Support\ServiceProvider;
-use Carbon\Carbon;
-use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 
 class ConfigServiceProvider extends ServiceProvider
 {

@@ -59,10 +59,10 @@ Route::get('/subscribe', function () {
     return view('errors.404');
 });
 
-Route::controller('blog', 'BlogController');
-Route::controller('profile', 'UserController');
-Route::controller('tournament', 'TournamentController');
-Route::controller('login', 'Auth\AuthController');
+Route::resource('blog', 'BlogController');
+Route::resource('profile', 'UserController');
+Route::resource('tournament', 'TournamentController');
+Route::resource('login', 'Auth\AuthController');
 
 
 Route::get('/terms-of-service', function () {
