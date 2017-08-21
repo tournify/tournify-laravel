@@ -139,7 +139,6 @@ return [
         SocialiteProviders\Manager\ServiceProvider::class,
         Cocur\Slugify\Bridge\Laravel\SlugifyServiceProvider::class,
         Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class,
-        Maknz\Slack\SlackServiceProvider::class,
 
 
         /*
@@ -204,7 +203,6 @@ return [
         "Slugify"   => Cocur\Slugify\Bridge\Laravel\SlugifyFacade::class,
         'LocalizedCarbon'   => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
         'DiffFormatter'     => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
-        'Slack' => Maknz\Slack\Facades\Slack::class,
 
     ],
 

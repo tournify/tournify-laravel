@@ -10,7 +10,7 @@
     </article>
     <section id="content" class="a">
         <article>
-            {!! Form::open(array('action' => 'TournamentController@getMake')) !!}
+            {!! Form::open(['url' => 'tournament/make', 'method' => 'post']) !!}
             <div class="col-md-3 well">
                 <div class="form-group">
 

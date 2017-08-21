@@ -17,7 +17,7 @@
         <h2><span>{{ trans('messages.domainfirst') }}</span>{{ trans('messages.domainlast') }}</h2>
         <p>{{ trans('messages.welcome') }}</p>
 
-        {!! Form::open(array('action' => 'TournamentController@getCreate')) !!}
+        {!! Form::open(['url' => 'tournament/create', 'method' => 'get']) !!}
         <p><input type="text" name="tourname" id="tourname" placeholder="{{ trans('messages.tournamentname') }}"></p>
         <div id="savebutton">
             <button type="submit">{{ trans('messages.create') }}</button>

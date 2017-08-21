@@ -19,7 +19,7 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex()
+    public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->take(10)->get();
 

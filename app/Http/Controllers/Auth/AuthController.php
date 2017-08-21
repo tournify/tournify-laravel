@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
 use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\Guard;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use App\Events\UserRegistered;
 use Laravel\Socialite\Facades\Socialite;
 use Faker\Factory as Faker;
@@ -30,7 +28,7 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use ThrottlesLogins;
 
     /**
      * Create a new authentication controller instance.
@@ -43,14 +41,12 @@ class AuthController extends Controller
 
     protected $loginPath = '/login';
 
-    public function __construct(Guard $auth, User $user)
+    public function __construct()
     {
-        $this->user = $user;
-        $this->auth = $auth;
         //$this->middleware('guest', ['except' => 'getLogout']);
     }
 
-    public function getIndex()
+    public function index()
     {
         return view('auth.login');
     }

@@ -16,8 +16,7 @@
         "socialiteproviders/instagram": "^3.0",
         "doctrine/dbal": "^2.5",
         "roumen/sitemap": "^2.5",
-        "maknz/slack": "^1.7",
-        "laravelrus/localized-carbon": "1.*"
+        "laravelrus/localized-carbon": "dev-master"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

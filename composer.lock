@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3746148420e0e4448872b6e21d8e48a6",
+    "content-hash": "1559300759a43bd099cc0af095d89ffb",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -1065,16 +1065,16 @@
         },
         {
             "name": "laravelrus/localized-carbon",
-            "version": "v1.4.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelRUS/localized-carbon.git",
-                "reference": "0a08dbf7687f5cb4cd35180c326502b2f4e5b516"
+                "reference": "0a7b47b974668695479fa605fcfbff1cbf751650"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelRUS/localized-carbon/zipball/0a08dbf7687f5cb4cd35180c326502b2f4e5b516",
-                "reference": "0a08dbf7687f5cb4cd35180c326502b2f4e5b516",
+                "url": "https://api.github.com/repos/LaravelRUS/localized-carbon/zipball/0a7b47b974668695479fa605fcfbff1cbf751650",
+                "reference": "0a7b47b974668695479fa605fcfbff1cbf751650",
                 "shasum": ""
             },
             "require": {
@@ -1105,7 +1105,7 @@
                 "laravel",
                 "time"
             ],
-            "time": "2015-01-30T02:49:29+00:00"
+            "time": "2017-02-22T12:02:17+00:00"
         },
         {
             "name": "lavary/laravel-menu",
@@ -1294,55 +1294,6 @@
                 "twitter"
             ],
             "time": "2016-08-17T00:36:58+00:00"
-        },
-        {
-            "name": "maknz/slack",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maknz/slack.git",
-                "reference": "7f21fefc70c76b304adc1b3a780c8740dfcfb595"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maknz/slack/zipball/7f21fefc70c76b304adc1b3a780c8740dfcfb595",
-                "reference": "7f21fefc70c76b304adc1b3a780c8740dfcfb595",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "guzzlehttp/guzzle": "~6.0|~5.0|~4.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.2.*"
-            },
-            "suggest": {
-                "illuminate/support": "Required for Laravel support"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Maknz\\Slack\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "maknz",
-                    "email": "github@mak.geek.nz"
-                }
-            ],
-            "description": "A simple PHP package for sending messages to Slack, with a focus on ease of use and elegant syntax. Includes Laravel support out of the box.",
-            "keywords": [
-                "laravel",
-                "slack"
-            ],
-            "time": "2015-06-03T03:35:16+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4654,7 +4605,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "lavary/laravel-menu": 20
+        "lavary/laravel-menu": 20,
+        "laravelrus/localized-carbon": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

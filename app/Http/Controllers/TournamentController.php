@@ -35,7 +35,7 @@ class TournamentController extends Controller
     public $sort_key4;
     public $sort_asc;
 
-    public function getIndex()
+    public function index()
     {
         $tournaments = Tournament::orderBy('created_at', 'DESC')->limit(20)->get();
         return view('tournament')->with(['tournaments' => $tournaments]);
@@ -287,7 +287,7 @@ class TournamentController extends Controller
         }
     }
 
-    public function getCreate()
+    public function create()
     {
         $input = array();
         if (Lang::getLocale() == 'sv') {

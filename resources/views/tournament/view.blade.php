@@ -25,7 +25,7 @@
                                 <div class="col-md-12">
                         @foreach($gameRow as $game)
                             <div class="col-md-4 well game-div">
-                                {!! Form::open(array('action' => 'TournamentController@postSave')) !!}
+                                {!! Form::open(['url' => 'tournament/save', 'method' => 'post']) !!}
                                 <div class="alert alert-success" style="display: none;"></div>
                                 <input type="hidden" name="game-id" value="{{ $game->id }}">
                                 <div class="game-name">

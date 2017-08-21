@@ -10,13 +10,13 @@
     </article>
     <section id="content" class="a">
     <article id="main">
-        @if($errors->has())
+        @if($errors)
             @foreach($errors->all() as $error)
                 <p class="error-message">{!!$error!!}</p>
             @endforeach
         @endif
         <div id="loginform">
-        {!! Form::open(array('action' => 'Auth\AuthController@getIndex')) !!}
+        {!! Form::open(['url' => 'login', 'method' => 'post']) !!}
         {!! Form::label('email', trans('messages.email') ) !!}
             {!! Form::email('email', $value = null, $attributes = array()) !!}
         {!! Form::label('password', trans('messages.password') ) !!}

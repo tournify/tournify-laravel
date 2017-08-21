@@ -25,6 +25,7 @@ Route::post('register', 'Auth\AuthController@postRegister');
 
 // Logout route
 
+Route::post('login', 'Auth\PasswordController@postIndex');
 Route::get('logout', 'Auth\AuthController@getLogout');
 
 Route::get('auth/github', 'Auth\AuthController@redirectToGithub');
@@ -43,6 +44,8 @@ Route::get('auth/twitter', 'Auth\AuthController@redirectToTwitter');
 Route::get('auth/twitter/callback', 'Auth\AuthController@handleTwitterCallback');
 
 Route::get('/tournament/create', ['uses' =>'TournamentController@getCreate']);
+Route::post('/tournament/make', ['uses' =>'TournamentController@postMake']);
+Route::post('/tournament/save', ['uses' =>'TournamentController@postSave']);
 Route::get('/tournament/{slug}', ['uses' =>'TournamentController@view']);
 Route::get('/tournament/{slug}/stats', ['uses' =>'TournamentController@stats']);
 Route::get('/tournament/{slug}/teams', ['uses' =>'TournamentController@teams']);
@@ -75,26 +78,4 @@ Route::get('/privacy-policy', function () {
 
 Route::get('/', function () {
     return view('welcome')->with(array('tournaments' => \App\Tournament::orderBy('created_at','desc')->take(5)->get()));
-});
-
-Route::get('test', function () {
-    // this checks for the event
-    $client = new \Maknz\Slack\Client('https://hooks.slack.com/services/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');
-    $client->to('#random')->attach([
-        'fallback' => 'Turnering skapad',
-        'text' => '',
-        'pretext' => '',
-        'color' => 'good',
-        'fields' => [
-            [
-                'title' => 'Metric 1',
-                'value' => 'Some value'
-            ],
-            [
-                'title' => 'Metric 2',
-                'value' => 'Some value',
-                'short' => true // whether the field is short enough to sit side-by-side other fields, defaults to false
-            ]
-        ]
-    ])->send('');
 });
