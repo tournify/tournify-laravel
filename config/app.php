@@ -148,6 +148,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
 
     ],
 
@@ -203,6 +204,7 @@ return [
         "Slugify"   => Cocur\Slugify\Bridge\Laravel\SlugifyFacade::class,
         'LocalizedCarbon'   => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
         'DiffFormatter'     => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
+        'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
 
     ],
 

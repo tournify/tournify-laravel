@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use App\Permission;
 use Illuminate\Support\Facades\Schema;
@@ -24,17 +23,17 @@ class AuthServiceProvider extends ServiceProvider
      * @param  \Illuminate\Contracts\Auth\Access\Gate  $gate
      * @return void
      */
-    public function boot(GateContract $gate)
+    public function boot()
     {
-        if (Schema::hasTable('permissions')) {
-            parent::registerPolicies($gate);
+        parent::registerPolicies();
+        //if (Schema::hasTable('permissions')) {
             // Dynamically register permissions with Laravel's Gate.
-            foreach ($this->getPermissions() as $permission) {
-                $gate->define($permission->name, function ($user) use ($permission) {
-                    return $user->hasPermission($permission);
-                });
-            }
-        }
+            //foreach ($this->getPermissions() as $permission) {
+            //    $gate->define($permission->name, function ($user) use ($permission) {
+            //        return $user->hasPermission($permission);
+            //    });
+            //}
+        //}
     }
     /**
      * Fetch the collection of site permissions.

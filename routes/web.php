@@ -2,12 +2,12 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
@@ -24,9 +24,6 @@ Route::get('register', 'Auth\AuthController@getRegister');
 Route::post('register', 'Auth\AuthController@postRegister');
 
 // Logout route
-
-Route::post('login', 'Auth\PasswordController@postIndex');
-Route::get('logout', 'Auth\AuthController@getLogout');
 
 Route::get('auth/github', 'Auth\AuthController@redirectToGithub');
 Route::get('auth/github/callback', 'Auth\AuthController@handleGithubCallback');
@@ -62,10 +59,15 @@ Route::get('/subscribe', function () {
     return view('errors.404');
 });
 
+Route::get('logout', [
+    'as' => 'logout',
+    'uses' => 'Auth\LoginController@logout'
+]);
+
 Route::resource('blog', 'BlogController');
 Route::resource('profile', 'UserController');
 Route::resource('tournament', 'TournamentController');
-Route::resource('login', 'Auth\AuthController');
+Route::resource('login', 'Auth\LoginController');
 
 
 Route::get('/terms-of-service', function () {
@@ -79,3 +81,7 @@ Route::get('/privacy-policy', function () {
 Route::get('/', function () {
     return view('welcome')->with(array('tournaments' => \App\Tournament::orderBy('created_at','desc')->take(5)->get()));
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

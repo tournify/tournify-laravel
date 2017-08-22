@@ -20,7 +20,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex()
+    public function index()
     {
         if (Auth::user()) {
             return view('profile');
