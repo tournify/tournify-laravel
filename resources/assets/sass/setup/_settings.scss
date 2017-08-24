@@ -1,0 +1,14 @@
+//Neat overrides
+$neat-grid: (
+    columns: 12,
+    gutter: 20px
+);
+
+// Breakpoints
+$site: new-breakpoint(max-width $max-width 12);
+$tablet: new-breakpoint(max-width 1024px 12);
+$mobile: new-breakpoint(max-width 768px 12);
+
+$site-min: new-breakpoint(min-width $max-width 12);
+$tablet-min: new-breakpoint(min-width 1025px 12);
+$mobile-min: new-breakpoint(min-width 769px 12);

@@ -5,6 +5,8 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.0.0",
+    "bourbon": "^4.3.4",
+    "bourbon-neat": "^1.9.0",
     "express": "^4.13.3",
     "ioredis": "^1.10.0",
     "laravel-elixir": "^3.0.0",
