@@ -1,8 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.default')
+
+@section('title', trans('messages.login'))
+@section('description', trans('messages.easytocreatetournaments'))
+@section('keywords', trans('messages.defaultkeywords'))
 
 @section('content')
-<div class="container">
-    <div class="row">
+    <article id="welcome" class="tiny">
+        <h2>{{ trans('messages.login') }}</h2>
+    </article>
+
+    <section id="content" class="a">
+        <article>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
@@ -63,6 +71,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        </article>
+    </section>
 @endsection

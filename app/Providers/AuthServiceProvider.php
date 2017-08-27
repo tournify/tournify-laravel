@@ -26,6 +26,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::registerPolicies();
+        // Not sure why I registered permissions here?
         //if (Schema::hasTable('permissions')) {
             // Dynamically register permissions with Laravel's Gate.
             //foreach ($this->getPermissions() as $permission) {
