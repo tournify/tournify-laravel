@@ -86,15 +86,5 @@
         });
 
     </script>
-    <script src="{{ asset('/javascript/socket.io.js') }}"></script>
-    <script>
-        //var socket = io('http://localhost:3000');
-        var socket = io('http://turnering.io:3000');
-        socket.on("main:App\\Events\\TournamentCreated", function(message){
-            // increase the power everytime we load test route
-            console.log(message);
-            $('#gamesfeed').prepend("<li><i class='fa fa-trophy icon'></i> <b>" + "{{ trans('messages.justnow') }}" + "</b> <a href='/tournament/" +  message.tournament.slug + "'>" + message.tournament.name + "</a> har skapats!</li>");
-        });
-    </script>
 @stop
 
