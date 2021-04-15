@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/tour":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/tour","hostpath":"/Users/uberswe/PhpstormProjects/tournify","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/uberswe/PhpstormProjects/tournify","disabled":false,"__vagrantfile":true}}}

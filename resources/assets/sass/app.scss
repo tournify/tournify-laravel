@@ -1,0 +1,56 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "compass/css3";
+#gamesfeed{
+  list-style-type: none;
+  margin: 2em 5em;
+  padding: 0;
+  border-left: 1px solid #ccc;
+  padding-left: 1.5em;
+
+  li{
+    border: 1px solid #ccc;
+    padding: 1em 1em 1.5em 3em;
+    margin: 1em;
+    display: block;
+    position: relative;
+    .icon{
+      height: 30px;
+      width: 30px;
+      padding: 8px;
+      color: #fff;
+      box-sizing: border-box;
+      display: block;
+      background: #00AA00;
+      position: absolute;
+      left: -3.1em;
+      top: .5em;
+      @include border-radius(50%);
+    }
+    &:before,
+    &:after{
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+      border-left: 0;
+    }
+    /* Stroke */
+    &:before{
+      top: 1em;
+      left: -8px;
+
+      /* If 1px darken stroke slightly */
+      border-right-color: #aaa;
+      border-width: 7px;
+    }
+    /* Fill */
+    &:after{
+      top: 1em;
+      left: -7px;
+      border-right-color: white;
+      border-width: 7px;
+    }
+  }
+}
