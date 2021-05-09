@@ -1,6 +1,6 @@
 # tournify
+This is a work in progress.
+
 Create tournaments for free with http://tournify.io
 
-Note: This project needs a bit of a cleanup as soon as I can get around to it.
-I was learning Laravel when I started this project and I can see that some files
-are not where they should be and everything is not really done the right way.
+Run locally by running `composer install` and them `sail up -d`. You can then access the project in your browser if you point `laravel.test` to your local host and navigating to the hostname in your browser.
