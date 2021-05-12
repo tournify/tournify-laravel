@@ -27,7 +27,7 @@
 
                     <div class="input-group">
                         <input type="text" class="form-control" id="tourname" name="tourname"
-                               value="{{ $data['tourname'] or '' }}">
+                               value="{{ $data['tourname'] }}">
                     </div>
                     <label for="teamcount">{{ trans('messages.teams') }}:</label>
 

@@ -6,7 +6,7 @@
 
 @section('content')
     <article id="welcome" class="tiny">
-        <h2>{{ $tournament->name }} - Stats</h2>
+        <h2>{{ $tournament->name }} - {{ trans('messages.stats') }}</h2>
     </article>
     <section id="content" class="a">
         <article>

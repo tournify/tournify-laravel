@@ -12,6 +12,9 @@
 */
 
 // Password reset link request routes...
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
 
@@ -62,7 +65,6 @@ Route::get('logout', [
 
 Route::resource('blog', 'BlogController');
 Route::resource('profile', 'UserController');
-Route::resource('tournament', 'TournamentController');
 Route::resource('login', 'Auth\LoginController');
 
 

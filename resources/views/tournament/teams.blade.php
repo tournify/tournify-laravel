@@ -1,12 +1,12 @@
 @extends('layouts.default')
 
-@section('title', $tournament->name." - Lag")
+@section('title', $tournament->name." - ".trans('messages.teams'))
 @section('description', trans('messages.easytocreatetournaments'))
 @section('keywords', trans('defaultkeywords'))
 
 @section('content')
     <article id="welcome" class="tiny">
-        <h2>{{ $tournament->name." - Lag" }}</h2>
+        <h2>{{ $tournament->name." - ".trans('messages.teams') }}</h2>
     </article>
     <section id="content" class="a">
         <article>

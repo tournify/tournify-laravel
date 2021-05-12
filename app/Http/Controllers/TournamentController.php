@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Faker\Factory as Faker;
 
 use App\Http\Requests;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Lang;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
@@ -26,7 +27,7 @@ class TournamentController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
 
     public $sort_key1;
@@ -34,12 +35,6 @@ class TournamentController extends Controller
     public $sort_key3;
     public $sort_key4;
     public $sort_asc;
-
-    public function index()
-    {
-        $tournaments = Tournament::orderBy('created_at', 'DESC')->limit(20)->get();
-        return view('tournament')->with(['tournaments' => $tournaments]);
-    }
 
     public function getMake()
     {
@@ -264,50 +259,20 @@ class TournamentController extends Controller
         return redirect('/tournament/' . $t->slug);
     }
 
-    public function postCreate(Request $request)
+    public function getCreate(Request $request)
     {
         $input = $request->all();
-        if (Lang::getLocale() == 'sv') {
-            $faker = Faker::create('sv_SE');
-        } else {
-            $faker = Faker::create();
-        }
+        $tourname = isset($input['tourname']) ? $input['tourname'] : "";
 
-        if (isset($input['tourname']) && strlen($input['tourname']) < 1) {
+        if (strlen($tourname) == 0) {
+            $faker = Faker::create(Lang::getLocale());
             if (Lang::getLocale() == 'sv') {
-                $input['tourname'] = "Turnering " . $faker->lastName;
+                $tourname = "Turnering " . $faker->lastName;
             } else {
-                $input['tourname'] = "Tournament " . $faker->lastName;
+                $tourname = "Tournament " . $faker->lastName;
             }
         }
-        if (isset($input['tourname'])) {
-            return view('tournament/create')->with('data', array('tourname' => $input['tourname']));
-        } else {
-            return view('tournament/create')->with('data', array('tourname' => ""));
-        }
-    }
-
-    public function create(Request $request)
-    {
-        $input = $request->input();
-        if (Lang::getLocale() == 'sv') {
-            $faker = Faker::create('sv_SE');
-        } else {
-            $faker = Faker::create();
-        }
-
-        if (isset($input['tourname']) && strlen($input['tourname']) < 1) {
-            if (Lang::getLocale() == 'sv') {
-                $input['tourname'] = "Turnering " . $faker->lastName;
-            } else {
-                $input['tourname'] = "Tournament " . $faker->lastName;
-            }
-        }
-        if (isset($input['tourname'])) {
-            return view('tournament/create')->with('data', array('tourname' => $input['tourname']));
-        } else {
-            return view('tournament/create')->with('data', array('tourname' => ""));
-        }
+        return view('tournament/create')->with('data', array('tourname' => $tourname));
     }
 
     private function uniqueTournamentSlug($name)
