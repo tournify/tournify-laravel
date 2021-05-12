@@ -18,8 +18,4 @@
             <li class="tw"><a rel="external" href="https://twitter.com/tournifyio">Twitter</a></li>
         </ul>
     @endif
-    {{--<ul class="download-a">--}}
-    {{--<li class="as"><a rel="external" href="./">Download on the App Store</a></li>--}}
-    {{--<li class="gp"><a rel="external" href="./">Get it on Google Play</a></li>--}}
-    {{--</ul>--}}
     <p>&copy; <span class="date">{{ date("Y") }}</span> {{ trans('messages.sitename') }}. {{ trans('messages.allrightsreserved') }} <a href="https://github.com/uberswe">{{ trans('messages.createdby') }}</a> <a href="/privacy-policy">{{ trans('messages.privacypolicy') }}</a> <a href="/terms-of-service">{{ trans('messages.tos') }}</a></p>
