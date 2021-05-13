@@ -57,7 +57,6 @@ class TournamentController extends Controller
                     $res['score'][] = $score->id;
                 }
             }
-            event(new GameUpdated($game));
         } else {
             $res["response"] = "error";
         }
@@ -253,8 +252,6 @@ class TournamentController extends Controller
         } else {
             $this->generateGames($t);
         }
-
-        event(new TournamentCreated($t));
 
         return redirect('/tournament/' . $t->slug);
     }
