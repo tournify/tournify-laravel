@@ -1,5 +1,6 @@
 # tournify
-This is a work in progress.
+
+**This project contains several bugs and has been replaced by a Go implementation at [tournify/web](https://github.com/tournify/web)**
 
 Create tournaments for free with http://tournify.io
 
